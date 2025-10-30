@@ -58,7 +58,7 @@ export default function VehicleMap() {
   useEffect(() => {
     if (!isPlaying || routeData.length < 2) return;
     let progress = currentIndex;
-    const speed = 35; // m/s
+    const speed = 35;
     let frame;
 
     const animate = () => {
@@ -126,8 +126,6 @@ export default function VehicleMap() {
           weight={5}
         />
         <FitRouteOnLoad route={routeData} />
-
-        {/* End marker */}
         <Marker
           position={[
             routeData[routeData.length - 1].lat,
@@ -135,7 +133,6 @@ export default function VehicleMap() {
           ]}
           icon={markerIcon}
         />
-
         <RotatedMarker
           position={[pos.lat, pos.lng]}
           icon={carIcon}
@@ -143,15 +140,12 @@ export default function VehicleMap() {
         />
       </MapContainer>
 
-      {/* Info panel for metadata */}
       <div className="absolute w-[155px] top-4 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-lg shadow-md text-sm font-medium text-gray-700 z-[9999]">
         <p>Latitude: {pos.lat.toFixed(4)}</p>
         <p>Longitude: {pos.lng.toFixed(4)}</p>
       </div>
 
-      {/* Controls */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-3 z-[9999] px-2">
-        {/* Main controls */}
         <div className="bg-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl shadow-lg flex gap-2 sm:gap-4">
           <button
             onClick={() => setIsPlaying(true)}
@@ -175,8 +169,6 @@ export default function VehicleMap() {
             Reset
           </button>
         </div>
-
-        {/* Follow button */}
         <button
           onClick={() => setIsFollowing(true)}
           className="bg-white hover:bg-gray-100 p-2 sm:p-3 rounded-full shadow-md border border-gray-300 flex items-center justify-center transition-all"

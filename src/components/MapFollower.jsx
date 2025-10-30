@@ -1,4 +1,3 @@
-// components/MapFollower.jsx
 import { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
 
