@@ -16,13 +16,13 @@ import MapFollower from "./components/MapFollower";
 import { calculateBearing, distance } from "./utils/mapUtils";
 
 const carIcon = L.icon({
-  iconUrl: "/src/assets/icons/car.png",
+  iconUrl: "../icons/car.png",
   iconSize: [40, 40],
   iconAnchor: [20, 20],
 });
 
 const markerIcon = L.icon({
-  iconUrl: "/src/assets/icons/marker.png",
+  iconUrl: "../icons/marker.png",
   iconSize: [36, 36],
   iconAnchor: [18, 36],
 });
